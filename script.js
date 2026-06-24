@@ -56,8 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Draw all logos
-    const logoCanvas = document.getElementById('logo-canvas');
-    if (logoCanvas) drawLogoIcon(logoCanvas, 40);
+    // Navbar logo is now an <img> element, no canvas drawing needed
+    // const logoCanvas = document.getElementById('logo-canvas');
+    // if (logoCanvas) drawLogoIcon(logoCanvas, 40);
 
     const footerLogoCanvas = document.getElementById('footer-logo-canvas');
     if (footerLogoCanvas) drawLogoIcon(footerLogoCanvas, 32);
