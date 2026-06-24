@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MehdiLabs — Mes projets Open Source</title>
+    <meta name="description" content="MehdiLabs — je suis Mehdi, et ici je partage mes projets open source : N.E.X.U.X, PyLingo, Terminus et MasterBrevet. IA, code et bidouillages en tout genre.">
+    <meta name="keywords" content="MehdiLabs, Mehdi, N.E.X.U.X, PyLingo, Terminus, MasterBrevet, AI, open source, projets, portfolio">
+    <meta name="author" content="Mehdi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Canvas for favicon generation -->
+    <canvas id="favicon-canvas" width="64" height="64" style="display:none;"></canvas>
+
+    <!-- Particle background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo">
+                <canvas id="logo-canvas" width="40" height="40"></canvas>
+                <span class="logo-text">MehdiLabs</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Développeur passionné & curieux
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Salut, moi c'est Mehdi 👋</span>
+                <span class="title-highlight">MehdiLabs</span>
+            </h1>
+            <p class="hero-subtitle">
+                Bienvenue dans mon labo ! Ici je bricole des projets open source — de l'IA qui tourne en local, un langage de prog fait maison, un agent autonome et même un outil de révision pour le brevet.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary" id="btn-projects">
+                    <span>Découvrir les projets</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="https://github.com/ioi-med" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="btn-github">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-label">Projets</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">% Open Source</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <canvas id="hero-canvas" width="500" height="500"></canvas>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Projets</span>
+                <h2 class="section-title">Ce que je construis</h2>
+                <p class="section-subtitle">Des idées qui me trottaient dans la tête, transformées en lignes de code. Chaque projet a son histoire.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- N.E.X.U.X -->
+                <article class="project-card" id="project-nexux" data-tilt>
+                    <div class="card-glow card-glow-purple"></div>
+                    <div class="card-header">
+                        <div class="card-icon-wrapper card-icon-purple">
+                            <img src="img/image.png" alt="N.E.X.U.X Logo" style="width: 64px; height: 64px; object-fit: contain; transform: scale(1.2);">
+                        </div>
+                        <div class="card-badges">
+                            <span class="tech-badge badge-python">Python</span>
+                            <span class="tech-badge badge-ai">AI</span>
+                        </div>
+                    </div>
+                    <h3 class="card-title">N.E.X.U.X</h3>
+                    <p class="card-description">
+                        Mon projet phare. J'ai voulu créer une IA qui tourne entièrement sur ta machine — pas de cloud, pas de données qui partent ailleurs. Ta vie privée, tes données, ton contrôle.
+                    </p>
+                    <div class="card-features">
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>100% Local</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Confidentialité</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Open Source</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ioi-med/N.E.X.U.X-AI-V3" target="_blank" rel="noopener noreferrer" class="card-link" id="link-nexux">
+                            <span>Voir sur GitHub</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                        <a href="https://ioi-med.github.io/N.E.X.U.X-AI-V3/" target="_blank" rel="noopener noreferrer" class="card-link visit-site-btn" data-project-name="N.E.X.U.X-AI-V3">
+                            <span>Voir le site</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PyLingo -->
+                <article class="project-card" id="project-pylingo" data-tilt>
+                    <div class="card-glow card-glow-cyan"></div>
+                    <div class="card-header">
+                        <div class="card-icon-wrapper card-icon-cyan">
+                            <img src="img/logo.png" alt="PyLingo Logo" style="width: 48px; height: 48px; object-fit: contain;">
+                        </div>
+                        <div class="card-badges">
+                            <span class="tech-badge badge-python">Python</span>
+                            <span class="tech-badge badge-lang">Language</span>
+                        </div>
+                    </div>
+                    <h3 class="card-title">PyLingo</h3>
+                    <p class="card-description">
+                        Et si je créais mon propre langage de prog ? C'est exactement ce que j'ai fait. PyLingo a une syntaxe pensée pour être intuitive — le tout construit avec Python.
+                    </p>
+                    <div class="card-features">
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Syntaxe moderne</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Basé sur Python</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Open Source</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ioi-med/PyLingo" target="_blank" rel="noopener noreferrer" class="card-link" id="link-pylingo">
+                            <span>Voir sur GitHub</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                        <a href="https://ioi-med.github.io/PyLingo/" target="_blank" rel="noopener noreferrer" class="card-link visit-site-btn" data-project-name="PyLingo">
+                            <span>Voir le site</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Terminus -->
+                <article class="project-card" id="project-terminus" data-tilt>
+                    <div class="card-glow card-glow-green"></div>
+                    <div class="card-header">
+                        <div class="card-icon-wrapper card-icon-green">
+                            <canvas id="icon-terminus" width="48" height="48"></canvas>
+                        </div>
+                        <div class="card-badges">
+                            <span class="tech-badge badge-python">Python</span>
+                            <span class="tech-badge badge-agent">Agent</span>
+                        </div>
+                    </div>
+                    <h3 class="card-title">Terminus</h3>
+                    <p class="card-description">
+                        Un agent IA autonome qui peut gérer des tâches complexes tout seul. L'idée c'était de créer un vrai assistant intelligent qui fait les choses à ta place.
+                    </p>
+                    <div class="card-features">
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Agent autonome</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Tâches complexes</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Open Source</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ioi-med/terminus" target="_blank" rel="noopener noreferrer" class="card-link" id="link-terminus">
+                            <span>Voir sur GitHub</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- MasterBrevet -->
+                <article class="project-card" id="project-masterbrevet" data-tilt>
+                    <div class="ia-warning-banner">ATTENTION AIDER A 10% PAR L'IA</div>
+                    <div class="card-glow card-glow-yellow"></div>
+                    <div class="card-header">
+                        <div class="card-icon-wrapper card-icon-yellow">
+                            <img src="img/logo.jpg" alt="MasterBrevet Logo" style="width: 48px; height: 48px; object-fit: contain;">
+                        </div>
+                        <div class="card-badges">
+                            <span class="tech-badge badge-education">Education</span>
+                        </div>
+                    </div>
+                    <h3 class="card-title">MasterBrevet</h3>
+                    <p class="card-description">
+                        Un outil que j'ai créé pour aider à réviser le brevet. Quiz interactifs, fiches de révision — tout ce qu'il faut pour être prêt le jour J.
+                    </p>
+                    <div class="card-features">
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Révisions</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Éducatif</span>
+                        </div>
+                        <div class="feature">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Open Source</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://github.com/ioi-med/MasterBrevet" target="_blank" rel="noopener noreferrer" class="card-link" id="link-masterbrevet">
+                            <span>Voir sur GitHub</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                        <a href="https://ioi-med.github.io/MasterBrevet/" target="_blank" rel="noopener noreferrer" class="card-link visit-site-btn" data-project-name="MasterBrevet" data-has-ai="true">
+                            <span>Voir le site</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-visual" style="position: relative; display: inline-block; width: 100%; max-width: 400px; border-radius: var(--radius-xl); box-shadow: var(--shadow-glow-purple); overflow: hidden;">
+                    <img src="img/hero_bg.png" alt="Abstract AI and Code Background" style="width: 100%; display: block;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 15, 0.4); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(2px);">
+                        <span style="font-size: 2.5rem; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: 0.1em; text-shadow: 0 0 20px rgba(168, 85, 247, 0.8), 0 0 40px rgba(6, 182, 212, 0.6); font-family: var(--font-primary);">MehdiLabs</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">À propos</span>
+                    <h2 class="section-title">Qui suis-je ?</h2>
+                    <p class="about-text">
+                        Je m'appelle Mehdi, j'ai la tête pleine d'idées et les mains sur le clavier. L'IA, le code, les langages de prog — tout ce qui permet de construire des trucs me passionne. Je crois que la tech doit être ouverte, accessible, et respecter les gens qui l'utilisent. C'est pour ça que tous mes projets sont open source.
+                    </p>
+                    <div class="tech-stack">
+                        <h4 class="tech-stack-title">Technologies</h4>
+                        <div class="tech-icons">
+                            <div class="tech-item" data-tooltip="Python">
+                                <div class="tech-icon-bg">🐍</div>
+                            </div>
+                            <div class="tech-item" data-tooltip="AI / ML">
+                                <div class="tech-icon-bg">🤖</div>
+                            </div>
+                            <div class="tech-item" data-tooltip="Terminal">
+                                <div class="tech-icon-bg">💻</div>
+                            </div>
+                            <div class="tech-item" data-tooltip="Open Source">
+                                <div class="tech-icon-bg">🌐</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="contact-card">
+                <div class="contact-glow"></div>
+                <span class="section-tag">Contact</span>
+                <h2 class="section-title">Un truc à me dire ?</h2>
+                <p class="contact-text">
+                    Une idée, une question, un bug à signaler, ou juste envie de discuter code ? Envoie-moi un mail ou passe voir mon GitHub — je réponds toujours !
+                </p>
+                <div class="contact-actions" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mehdi.tannoubi0@gmail.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span>mehdi.tannoubi0@gmail.com</span>
+                    </a>
+                    <a href="https://github.com/ioi-med" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large" id="btn-contact-github">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        <span>Visiter mon GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <canvas id="footer-logo-canvas" width="32" height="32"></canvas>
+                    <span>MehdiLabs</span>
+                </div>
+                <p class="footer-text">© 2026 Mehdi · Fait avec ❤️ · Tout est open source.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/ioi-med/N.E.X.U.X-AI-V3" target="_blank" rel="noopener noreferrer">N.E.X.U.X</a>
+                    <a href="https://github.com/ioi-med/PyLingo" target="_blank" rel="noopener noreferrer">PyLingo</a>
+                    <a href="https://github.com/ioi-med/terminus" target="_blank" rel="noopener noreferrer">Terminus</a>
+                    <a href="https://github.com/ioi-med/MasterBrevet" target="_blank" rel="noopener noreferrer">MasterBrevet</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terms Modal -->
+    <div class="modal-overlay" id="terms-modal">
+        <div class="modal-content">
+            <h3 class="modal-title">Conditions d'Utilisation</h3>
+            <div class="modal-body" id="modal-text-container">
+                <!-- Text injected by JS -->
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="decline-terms">Annuler</button>
+                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="accept-terms">Accepter & Visiter</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
